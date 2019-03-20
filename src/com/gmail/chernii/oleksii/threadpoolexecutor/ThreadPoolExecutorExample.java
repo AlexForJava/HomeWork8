@@ -1,4 +1,4 @@
-package com.gmail.chernii.oleksii;
+package com.gmail.chernii.oleksii.threadpoolexecutor;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
