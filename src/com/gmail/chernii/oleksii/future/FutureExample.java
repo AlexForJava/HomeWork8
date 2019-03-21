@@ -6,10 +6,10 @@ import java.util.concurrent.*;
  * Created by Space on 19.03.2019.
  */
 public class FutureExample {
-    private static String YES ="YES";
-    private static String NO ="NO";
+    private static final String YES = "YES";
+    private static final String NO = "NO";
 
-    public static void main(String[] args) {
+    public void start() {
         ExecutorService service = Executors.newSingleThreadExecutor();
         Future<String> future = service.submit(new ThreadCallable());
         System.out.println("Done? - " + ((future.isDone()) ? YES : NO));

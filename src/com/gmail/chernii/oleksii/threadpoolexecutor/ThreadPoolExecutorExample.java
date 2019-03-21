@@ -1,29 +1,24 @@
 package com.gmail.chernii.oleksii.threadpoolexecutor;
 
+import com.gmail.chernii.oleksii.utils.ThreadUtil;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Space on 19.03.2019.
  */
 public class ThreadPoolExecutorExample {
-    public static void main(String[] args) {
+    public void start() {
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
         Runnable r = () -> {
-            try {
-                int sleep = (int) (Math.random() * 10);
-                TimeUnit.SECONDS.sleep(sleep);
-                System.out.println(Thread.currentThread().getName() + " awake after " + sleep + " sec.");
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            int sleep = (int) (Math.random() * 10);
+            ThreadUtil.sleep(2000);
+            System.out.println(Thread.currentThread().getName() + " awake after " + sleep + " sec.");
         };
         executor.execute(r);
         executor.execute(r);
 
         executor.shutdown();
         executor.shutdown();
-
     }
 }

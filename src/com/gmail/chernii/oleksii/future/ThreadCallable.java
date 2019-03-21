@@ -1,5 +1,6 @@
 package com.gmail.chernii.oleksii.future;
 
+import com.gmail.chernii.oleksii.utils.ThreadUtil;
 import java.util.concurrent.Callable;
 
 /**
@@ -8,7 +9,7 @@ import java.util.concurrent.Callable;
 public class ThreadCallable implements Callable<String> {
     @Override
     public String call() throws Exception {
-        Thread.sleep(1000);
+        ThreadUtil.sleep(1000);
         return "awake";
     }
 }

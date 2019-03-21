@@ -11,7 +11,7 @@ import java.util.concurrent.ExecutionException;
  * Created by Space on 19.03.2019.
  */
 public class ScheduledFutureExample {
-    public static void main(String[] args) {
+    public void start() {
         ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
         ScheduledFuture<Integer> future = service.schedule(new MyThread(), 3, TimeUnit.SECONDS);
         ExecutorService timer = Executors.newSingleThreadExecutor();
